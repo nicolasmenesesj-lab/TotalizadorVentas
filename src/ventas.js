@@ -1,3 +1,6 @@
+const TASAS_IMPUESTO_POR_ESTADO = {
+    CA: 0.0825,
+};
 
 class Ventas {
     getCantidad(cantidad) {
@@ -10,11 +13,8 @@ class Ventas {
         return cantidad * precio;
     }
     calcularImpuesto(precioNeto, estado) {
-    const tasasPorEstado = {
-        CA: 0.0825,
-    };
-    const tasa = tasasPorEstado[estado];
-    return precioNeto * tasa;
+        const tasa = TASAS_IMPUESTO_POR_ESTADO[estado];
+        return precioNeto * tasa;
     }
 }
 export default Ventas;
