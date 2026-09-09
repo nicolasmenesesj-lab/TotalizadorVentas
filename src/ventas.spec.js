@@ -77,4 +77,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuestoCategoria(100, 'Material de escritorio')).toEqual(0);
     });
+    it('deberia calcular 3% de impuesto adicional para la categoria Muebles', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuestoCategoria(100, 'Muebles')).toEqual(3);
+    });
 });
