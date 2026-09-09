@@ -20,6 +20,8 @@ const TRAMOS_DESCUENTO = [
 const CATEGORIAS_IMPUESTO_ADICIONAL = {
     Alimentos: 0,
     'Bebidas alcoholicas': 0.07,
+    'Material de escritorio': 0,
+
 };
 
 class Ventas {

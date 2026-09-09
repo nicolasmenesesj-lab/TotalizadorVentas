@@ -73,4 +73,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuestoCategoria(100, 'Bebidas alcoholicas')).toEqual(7);
     });
+    it('deberia calcular 0% de impuesto adicional para la categoria Material de escritorio', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuestoCategoria(100, 'Material de escritorio')).toEqual(0);
+    });
 });
