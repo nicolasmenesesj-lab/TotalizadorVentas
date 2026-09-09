@@ -160,4 +160,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.getTipoClientePorDefecto()).toEqual('Normal');
     });
+    it('deberia aplicar 0.5% de descuento en envio para cliente Recurrente', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuentoEnvio(100, 'Recurrente')).toEqual(0.5);
+    });
 });

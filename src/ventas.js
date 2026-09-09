@@ -53,6 +53,10 @@ const RANGOS_ENVIO = [
 const TIPOS_CLIENTE_DISPONIBLES = ['Normal', 'Recurrente', 'Antiguo Recurrente', 'Especial'];
 const TIPO_CLIENTE_POR_DEFECTO = 'Normal';
 
+const DESCUENTO_ENVIO_POR_TIPO_CLIENTE = {
+    Recurrente: 0.005,
+};
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -118,5 +122,10 @@ class Ventas {
     getTipoClientePorDefecto() {
         return TIPO_CLIENTE_POR_DEFECTO;
     }
+    calcularDescuentoEnvio(costoEnvioTotal, tipoCliente) {
+        const tasa = DESCUENTO_ENVIO_POR_TIPO_CLIENTE[tipoCliente] || 0;
+        return costoEnvioTotal * tasa;
+    }
+
 }
 export default Ventas;
