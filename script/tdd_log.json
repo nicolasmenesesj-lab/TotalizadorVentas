@@ -278,5 +278,45 @@
     "timestamp": 1788993589174,
     "success": true,
     "testId": 0
+  },
+  {
+    "numPassedTests": 16,
+    "failedTests": 0,
+    "numTotalTests": 16,
+    "timestamp": 1788993622217,
+    "success": true,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 15,
+    "failedTests": 1,
+    "numTotalTests": 16,
+    "timestamp": 1788993633286,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 16,
+    "failedTests": 0,
+    "numTotalTests": 16,
+    "timestamp": 1788993641266,
+    "success": true,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 5,
+    "numTotalTests": 16,
+    "timestamp": 1788993686298,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 16,
+    "failedTests": 0,
+    "numTotalTests": 16,
+    "timestamp": 1788993725086,
+    "success": true,
+    "testId": 0
   }
 ]
