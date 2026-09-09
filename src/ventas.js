@@ -55,6 +55,7 @@ const TIPO_CLIENTE_POR_DEFECTO = 'Normal';
 
 const DESCUENTO_ENVIO_POR_TIPO_CLIENTE = {
     Recurrente: 0.005,
+    'Antiguo Recurrente': 0.01,
 };
 
 class Ventas {
