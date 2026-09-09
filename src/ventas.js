@@ -50,6 +50,9 @@ const RANGOS_ENVIO = [
     { maximo: Infinity, costo: 9 },
 ];
 
+const TIPOS_CLIENTE_DISPONIBLES = ['Normal', 'Recurrente', 'Antiguo Recurrente', 'Especial'];
+const TIPO_CLIENTE_POR_DEFECTO = 'Normal';
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -108,6 +111,12 @@ class Ventas {
     calcularCostoEnvioTotal(cantidad, pesoVolumetrico) {
         const costoPorUnidad = this.calcularCostoEnvioPorUnidad(pesoVolumetrico);
         return cantidad * costoPorUnidad;
+    }
+    listarTiposCliente() {
+        return TIPOS_CLIENTE_DISPONIBLES;
+    }
+    getTipoClientePorDefecto() {
+        return TIPO_CLIENTE_POR_DEFECTO;
     }
 }
 export default Ventas;

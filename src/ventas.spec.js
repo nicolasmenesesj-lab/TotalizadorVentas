@@ -149,4 +149,15 @@ describe('Ventas', () => {
         // cantidad 20, peso volumetrico 15 (rango 11-20 => $3.5 por unidad)
         expect(ventas.calcularCostoEnvioTotal(20, 15)).toEqual(70);
     });
+    it('deberia listar los tipos de cliente disponibles', () => {
+        const ventas = new Ventas();
+        expect(ventas.listarTiposCliente()).toEqual([
+            'Normal', 'Recurrente', 'Antiguo Recurrente', 'Especial',
+        ]);
+    });
+
+    it('el tipo de cliente por defecto deberia ser Normal', () => {
+        const ventas = new Ventas();
+        expect(ventas.getTipoClientePorDefecto()).toEqual('Normal');
+    });
 });
