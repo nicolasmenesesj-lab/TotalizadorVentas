@@ -17,6 +17,10 @@ const TRAMOS_DESCUENTO = [
     { minimo: 1000, tasa: 0.03 },
 ];
 
+const CATEGORIAS_IMPUESTO_ADICIONAL = {
+    Alimentos: 0,
+};
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -53,6 +57,10 @@ class Ventas {
         const descuento = this.calcularDescuento(precioNeto);
         const impuesto = this.calcularImpuesto(precioNeto, estado);
         return precioNeto - descuento + impuesto;
+    }
+    calcularImpuestoCategoria(precioNeto, categoria) {
+        const tasa = CATEGORIAS_IMPUESTO_ADICIONAL[categoria];
+        return precioNeto * tasa;
     }
 }
 export default Ventas;

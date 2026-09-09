@@ -65,4 +65,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularPrecioTotal(20, 3, 'TX')).toEqual(63.75);
     });
+    it('deberia calcular 0% de impuesto adicional para la categoria Alimentos', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuestoCategoria(100, 'Alimentos')).toEqual(0);
+    });
 });
