@@ -172,4 +172,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuentoEnvio(100, 'Especial')).toEqual(1.5);
     });
+    it('deberia aplicar $100 de descuento fijo para cliente Recurrente con Alimentos y neto mayor a 3000', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuentoFijo('Recurrente', 'Alimentos', 3500)).toEqual(100);
+    });
 });

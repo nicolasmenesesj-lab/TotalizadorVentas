@@ -128,6 +128,12 @@ class Ventas {
         const tasa = DESCUENTO_ENVIO_POR_TIPO_CLIENTE[tipoCliente] || 0;
         return costoEnvioTotal * tasa;
     }
+    calcularDescuentoFijo(tipoCliente, categoria, precioNeto) {
+        if (tipoCliente === 'Recurrente' && categoria === 'Alimentos' && precioNeto > 3000) {
+            return 100;
+        }
+        return 0;
+    }
 
 }
 export default Ventas;
