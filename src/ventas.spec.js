@@ -93,4 +93,15 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuestoCategoria(100, 'Varios')).toEqual(0);
     });
+    it('deberia listar las categorias disponibles', () => {
+        const ventas = new Ventas();
+        expect(ventas.listarCategorias()).toEqual([
+            'Alimentos', 'Bebidas alcoholicas', 'Material de escritorio',
+            'Muebles', 'Electronicos', 'Vestimenta', 'Varios',
+        ]);
+    });
+    it('la categoria por defecto deberia ser Varios', () => {
+        const ventas = new Ventas();
+        expect(ventas.getCategoriaPorDefecto()).toEqual('Varios');
+    });
 });

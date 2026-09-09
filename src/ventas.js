@@ -27,6 +27,12 @@ const CATEGORIAS_IMPUESTO_ADICIONAL = {
     Varios: 0,
 };
 
+const CATEGORIAS_DISPONIBLES = [
+    'Alimentos', 'Bebidas alcoholicas', 'Material de escritorio',
+    'Muebles', 'Electronicos', 'Vestimenta', 'Varios',
+];
+const CATEGORIA_POR_DEFECTO = 'Varios';
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -63,6 +69,12 @@ class Ventas {
         const descuento = this.calcularDescuento(precioNeto);
         const impuesto = this.calcularImpuesto(precioNeto, estado);
         return precioNeto - descuento + impuesto;
+    }
+    listarCategorias() {
+        return CATEGORIAS_DISPONIBLES;
+    }
+    getCategoriaPorDefecto() {
+        return CATEGORIA_POR_DEFECTO;
     }
     calcularImpuestoCategoria(precioNeto, categoria) {
         const tasa = CATEGORIAS_IMPUESTO_ADICIONAL[categoria];
