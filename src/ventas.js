@@ -40,6 +40,11 @@ const CATEGORIAS_DESCUENTO_ADICIONAL = {
     Electronicos: 0.01,
 };
 
+const RANGOS_ENVIO = [
+    { maximo: 10, costo: 0 },
+    { maximo: 20, costo: 3.5 },
+];
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -92,7 +97,8 @@ class Ventas {
         return precioNeto * tasa;
     }
     calcularCostoEnvioPorUnidad(pesoVolumetrico) {
-        return 0;
+        const rango = RANGOS_ENVIO.find(r => pesoVolumetrico <= r.maximo);
+        return rango.costo;
     }
 }
 export default Ventas;
