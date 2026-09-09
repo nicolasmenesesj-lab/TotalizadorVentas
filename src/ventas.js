@@ -34,6 +34,15 @@ class Ventas {
         return precioNeto * 0.03;
     }
     return 0;
-}
+    }
+    calcularDescuento(precioNeto) {
+        const tramos = [
+            { minimo: 3000, tasa: 0.05 },
+            { minimo: 1000, tasa: 0.03 },
+        ];
+        const tramo = tramos.find(t => precioNeto >= t.minimo);
+        const tasa = tramo ? tramo.tasa : 0;
+        return precioNeto * tasa;
+    }
 }
 export default Ventas;
