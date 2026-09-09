@@ -33,4 +33,13 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuesto(100, 'AL')).toEqual(4.00);
     });
+    it('deberia listar los estados disponibles', () => {
+        const ventas = new Ventas();
+        expect(ventas.listarEstados()).toEqual(['CA', 'UT', 'NV', 'TX', 'AL']);
+    });
+
+    it('el estado por defecto deberia ser CA', () => {
+        const ventas = new Ventas();
+        expect(ventas.getEstadoPorDefecto()).toEqual('CA');
+    });
 });

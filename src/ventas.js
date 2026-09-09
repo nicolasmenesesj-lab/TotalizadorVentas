@@ -6,6 +6,9 @@ const TASAS_IMPUESTO_POR_ESTADO = {
     AL: 0.04,
 };
 
+const ESTADOS_DISPONIBLES = ['CA', 'UT', 'NV', 'TX', 'AL'];
+const ESTADO_POR_DEFECTO = 'CA';
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -20,6 +23,11 @@ class Ventas {
         const tasa = TASAS_IMPUESTO_POR_ESTADO[estado];
         return precioNeto * tasa;
     }
-    
+    listarEstados() {
+        return ESTADOS_DISPONIBLES;
+    }
+    getEstadoPorDefecto() {
+        return ESTADO_POR_DEFECTO;
+    }
 }
 export default Ventas;
