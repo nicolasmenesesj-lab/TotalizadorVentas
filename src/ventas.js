@@ -48,6 +48,11 @@ class Ventas {
         const tasa = tramo ? tramo.tasa : 0;
         return Math.round(precioNeto * tasa);
     }
-    
+    calcularPrecioTotal(cantidad, precio, estado) {
+        const precioNeto = this.calcularPrecioNeto(cantidad, precio);
+        const descuento = this.calcularDescuento(precioNeto);
+        const impuesto = this.calcularImpuesto(precioNeto, estado);
+        return precioNeto - descuento + impuesto;
+    }
 }
 export default Ventas;

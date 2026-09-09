@@ -61,4 +61,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuento(30000)).toEqual(4500);
     });
+    it('deberia calcular el precio total con descuento e impuesto', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularPrecioTotal(20, 3, 'TX')).toEqual(63.75);
+    });
 });
