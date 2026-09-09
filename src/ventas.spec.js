@@ -53,4 +53,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuento(7000)).toEqual(490);
     });
+    it('deberia aplicar 10% de descuento cuando el total es 10000', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuento(10000)).toEqual(1000);
+    });
 });

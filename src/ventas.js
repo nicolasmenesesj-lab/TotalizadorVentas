@@ -10,6 +10,7 @@ const ESTADOS_DISPONIBLES = ['CA', 'UT', 'NV', 'TX', 'AL'];
 const ESTADO_POR_DEFECTO = 'CA';
 
 const tramos = [
+    { minimo: 10000, tasa: 0.10 },
     { minimo: 7000, tasa: 0.07 },
     { minimo: 3000, tasa: 0.05 },
     { minimo: 1000, tasa: 0.03 },
