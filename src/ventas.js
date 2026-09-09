@@ -105,5 +105,9 @@ class Ventas {
         const rango = RANGOS_ENVIO.find(r => pesoVolumetrico <= r.maximo);
         return rango.costo;
     }
+    calcularCostoEnvioTotal(cantidad, pesoVolumetrico) {
+        const costoPorUnidad = this.calcularCostoEnvioPorUnidad(pesoVolumetrico);
+        return cantidad * costoPorUnidad;
+    }
 }
 export default Ventas;

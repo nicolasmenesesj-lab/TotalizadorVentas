@@ -144,4 +144,9 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularCostoEnvioPorUnidad(250)).toEqual(9);
     });
+    it('deberia calcular el costo de envio total multiplicando por la cantidad', () => {
+        const ventas = new Ventas();
+        // cantidad 20, peso volumetrico 15 (rango 11-20 => $3.5 por unidad)
+        expect(ventas.calcularCostoEnvioTotal(20, 15)).toEqual(70);
+    });
 });
