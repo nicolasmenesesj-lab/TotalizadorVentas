@@ -104,4 +104,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.getCategoriaPorDefecto()).toEqual('Varios');
     });
+    it('deberia aplicar 2% de descuento adicional para la categoria Alimentos', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuentoCategoria(100, 'Alimentos')).toEqual(2);
+    });
 });

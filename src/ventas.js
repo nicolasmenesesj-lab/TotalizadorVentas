@@ -33,6 +33,12 @@ const CATEGORIAS_DISPONIBLES = [
 ];
 const CATEGORIA_POR_DEFECTO = 'Varios';
 
+
+const CATEGORIAS_DESCUENTO_ADICIONAL = {
+    Alimentos: 0.02,
+};
+
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -78,6 +84,10 @@ class Ventas {
     }
     calcularImpuestoCategoria(precioNeto, categoria) {
         const tasa = CATEGORIAS_IMPUESTO_ADICIONAL[categoria];
+        return Math.round(precioNeto * tasa);
+    }
+    calcularDescuentoCategoria(precioNeto, categoria) {
+        const tasa = CATEGORIAS_DESCUENTO_ADICIONAL[categoria] || 0;
         return Math.round(precioNeto * tasa);
     }
 }
