@@ -37,6 +37,7 @@ const CATEGORIA_POR_DEFECTO = 'Varios';
 const CATEGORIAS_DESCUENTO_ADICIONAL = {
     Alimentos: 0.02,
     'Material de escritorio': 0.015,
+    Electronicos: 0.01,
 };
 
 class Ventas {
