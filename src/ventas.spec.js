@@ -9,4 +9,8 @@ describe('Ventas', () => {
     const ventas = new Ventas();
     expect(ventas.getPrecio(5)).toEqual(5);
     });
+    it('deberia mostrar el precio neto', () => {
+    const ventas = new Ventas();
+    expect(ventas.calcularPrecioNeto(3, 5)).toEqual(15);
+    });
 });
