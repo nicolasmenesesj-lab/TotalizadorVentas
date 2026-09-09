@@ -24,6 +24,7 @@ const CATEGORIAS_IMPUESTO_ADICIONAL = {
     Muebles: 0.03,
     Electronicos: 0.04,
     Vestimenta: 0.02,
+    Varios: 0,
 };
 
 class Ventas {

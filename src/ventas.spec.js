@@ -89,4 +89,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuestoCategoria(100, 'Vestimenta')).toEqual(2);
     });
+    it('deberia calcular 0% de impuesto adicional para la categoria Varios', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuestoCategoria(100, 'Varios')).toEqual(0);
+    });
 });
