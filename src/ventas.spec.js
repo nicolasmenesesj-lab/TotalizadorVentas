@@ -180,4 +180,20 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuentoFijo('Especial', 'Electronicos', 8000)).toEqual(200);
     });
+    it('deberia calcular el precio total completo integrando descuento, impuesto, envio y descuentos fijos', () => {
+        const ventas = new Ventas();
+        const resultado = ventas.calcularPrecioTotalCompleto({
+            cantidad: 20,
+            precio: 3,
+            estado: 'TX',
+            categoria: 'Varios',
+            tipoCliente: 'Normal',
+            pesoVolumetrico: 15,
+        });
+        // precioNeto = 60 (sin tramo de descuento)
+        // impuesto TX = 60 * 0.0625 = 3.75, impuesto categoria Varios = 0
+        // envio: 20 unidades * $3.5 (rango 11-20) = 70, sin descuento (cliente Normal)
+        // total = 60 - 0 + 3.75 + 70 = 133.75
+        expect(resultado).toEqual(133.75);
+    });
 });
