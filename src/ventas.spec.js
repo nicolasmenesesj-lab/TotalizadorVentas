@@ -176,4 +176,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuentoFijo('Recurrente', 'Alimentos', 3500)).toEqual(100);
     });
+    it('deberia aplicar $200 de descuento fijo para cliente Especial con Electronicos y neto mayor a 7000', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuentoFijo('Especial', 'Electronicos', 8000)).toEqual(200);
+    });
 });

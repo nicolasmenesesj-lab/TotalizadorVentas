@@ -129,11 +129,14 @@ class Ventas {
         return costoEnvioTotal * tasa;
     }
     calcularDescuentoFijo(tipoCliente, categoria, precioNeto) {
-        if (tipoCliente === 'Recurrente' && categoria === 'Alimentos' && precioNeto > 3000) {
-            return 100;
-        }
-        return 0;
+    if (tipoCliente === 'Recurrente' && categoria === 'Alimentos' && precioNeto > 3000) {
+        return 100;
     }
+    if (tipoCliente === 'Especial' && categoria === 'Electronicos' && precioNeto > 7000) {
+        return 200;
+    }
+    return 0;
+}
 
 }
 export default Ventas;
