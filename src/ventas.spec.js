@@ -25,4 +25,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuesto(100, 'NV')).toEqual(8.00);
     });
+    it('deberia calcular el impuesto para el estado TX (6.25%)', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuesto(100, 'TX')).toEqual(6.25);
+    });
 });
