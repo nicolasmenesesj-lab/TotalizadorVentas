@@ -37,9 +37,12 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.listarEstados()).toEqual(['CA', 'UT', 'NV', 'TX', 'AL']);
     });
-
     it('el estado por defecto deberia ser CA', () => {
         const ventas = new Ventas();
         expect(ventas.getEstadoPorDefecto()).toEqual('CA');
+    });
+    it('deberia aplicar 3% de descuento cuando el total es 1000', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuento(1000)).toEqual(30);
     });
 });

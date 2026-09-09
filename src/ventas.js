@@ -29,5 +29,11 @@ class Ventas {
     getEstadoPorDefecto() {
         return ESTADO_POR_DEFECTO;
     }
+    calcularDescuento(precioNeto) {
+    if (precioNeto >= 1000) {
+        return precioNeto * 0.03;
+    }
+    return 0;
+}
 }
 export default Ventas;
