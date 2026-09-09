@@ -9,6 +9,12 @@ const TASAS_IMPUESTO_POR_ESTADO = {
 const ESTADOS_DISPONIBLES = ['CA', 'UT', 'NV', 'TX', 'AL'];
 const ESTADO_POR_DEFECTO = 'CA';
 
+const tramos = [
+    { minimo: 7000, tasa: 0.07 },
+    { minimo: 3000, tasa: 0.05 },
+    { minimo: 1000, tasa: 0.03 },
+];
+
 class Ventas {
     getCantidad(cantidad) {
         return cantidad;
@@ -36,13 +42,10 @@ class Ventas {
     return 0;
     }
     calcularDescuento(precioNeto) {
-        const tramos = [
-            { minimo: 3000, tasa: 0.05 },
-            { minimo: 1000, tasa: 0.03 },
-        ];
         const tramo = tramos.find(t => precioNeto >= t.minimo);
         const tasa = tramo ? tramo.tasa : 0;
-        return precioNeto * tasa;
+        return Math.round(precioNeto * tasa);
     }
+    
 }
 export default Ventas;
