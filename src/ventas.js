@@ -23,6 +23,7 @@ const CATEGORIAS_IMPUESTO_ADICIONAL = {
     'Material de escritorio': 0,
     Muebles: 0.03,
     Electronicos: 0.04,
+    Vestimenta: 0.02,
 };
 
 class Ventas {
