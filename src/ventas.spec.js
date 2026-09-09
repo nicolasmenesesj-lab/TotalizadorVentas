@@ -136,4 +136,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularCostoEnvioPorUnidad(90)).toEqual(6.5);
     });
+    it('deberia costar $8 el envio por unidad cuando el peso volumetrico es 150 (rango 101-200)', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularCostoEnvioPorUnidad(150)).toEqual(8);
+    });
 });
