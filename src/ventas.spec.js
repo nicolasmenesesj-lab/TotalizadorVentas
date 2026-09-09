@@ -221,4 +221,8 @@ describe('Ventas', () => {
             precioTotal: 133.75,
         });
     });
+    it('deberia formatear una tasa como porcentaje con simbolo %', () => {
+        const ventas = new Ventas();
+        expect(ventas.formatearPorcentaje(0.0625)).toEqual('6.25%');
+    });
 });

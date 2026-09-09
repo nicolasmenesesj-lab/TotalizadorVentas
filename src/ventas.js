@@ -164,5 +164,8 @@ class Ventas {
             costoEnvio, descuentoEnvio, envioTotal, precioTotal,
         };
     }
+    formatearPorcentaje(tasa) {
+        return `${(tasa * 100).toFixed(2).replace(/\.?0+$/, '')}%`;
+    }
 }
 export default Ventas;
