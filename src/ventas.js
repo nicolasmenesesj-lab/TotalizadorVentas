@@ -1,6 +1,7 @@
 const TASAS_IMPUESTO_POR_ESTADO = {
     CA: 0.0825,
     UT: 0.0665,
+    NV: 0.08,
 };
 
 class Ventas {
