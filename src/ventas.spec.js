@@ -69,4 +69,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuestoCategoria(100, 'Alimentos')).toEqual(0);
     });
+    it('deberia calcular 7% de impuesto adicional para la categoria Bebidas alcoholicas', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuestoCategoria(100, 'Bebidas alcoholicas')).toEqual(7);
+    });
 });

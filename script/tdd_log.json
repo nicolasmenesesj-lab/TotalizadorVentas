@@ -350,5 +350,29 @@
     "timestamp": 1788994229508,
     "success": true,
     "testId": 0
+  },
+  {
+    "numPassedTests": 18,
+    "failedTests": 1,
+    "numTotalTests": 19,
+    "timestamp": 1788994249789,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 18,
+    "failedTests": 1,
+    "numTotalTests": 19,
+    "timestamp": 1788994269037,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 19,
+    "failedTests": 0,
+    "numTotalTests": 19,
+    "timestamp": 1788994288757,
+    "success": true,
+    "testId": 0
   }
 ]

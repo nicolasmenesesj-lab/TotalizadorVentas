@@ -19,6 +19,7 @@ const TRAMOS_DESCUENTO = [
 
 const CATEGORIAS_IMPUESTO_ADICIONAL = {
     Alimentos: 0,
+    'Bebidas alcoholicas': 0.07,
 };
 
 class Ventas {
@@ -60,7 +61,7 @@ class Ventas {
     }
     calcularImpuestoCategoria(precioNeto, categoria) {
         const tasa = CATEGORIAS_IMPUESTO_ADICIONAL[categoria];
-        return precioNeto * tasa;
+        return Math.round(precioNeto * tasa);
     }
 }
 export default Ventas;
