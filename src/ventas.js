@@ -47,6 +47,7 @@ const RANGOS_ENVIO = [
     { maximo: 80, costo: 6 },
     { maximo: 100, costo: 6.5 },
     { maximo: 200, costo: 8 },
+    { maximo: Infinity, costo: 9 },
 ];
 
 class Ventas {
