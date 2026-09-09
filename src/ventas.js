@@ -43,6 +43,7 @@ const CATEGORIAS_DESCUENTO_ADICIONAL = {
 const RANGOS_ENVIO = [
     { maximo: 10, costo: 0 },
     { maximo: 20, costo: 3.5 },
+    { maximo: 40, costo: 5 },
 ];
 
 class Ventas {
