@@ -3,7 +3,7 @@ const TASAS_IMPUESTO_POR_ESTADO = {
     UT: 0.0665,
     NV: 0.08,
     TX: 0.0625,
-
+    AL: 0.04,
 };
 
 class Ventas {
