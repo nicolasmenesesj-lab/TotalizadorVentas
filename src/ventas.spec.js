@@ -108,4 +108,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuentoCategoria(100, 'Alimentos')).toEqual(2);
     });
+    it('deberia aplicar 1.5% de descuento adicional para la categoria Material de escritorio', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuentoCategoria(100, 'Material de escritorio')).toEqual(1.5);
+    });
 });

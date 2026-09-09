@@ -36,8 +36,8 @@ const CATEGORIA_POR_DEFECTO = 'Varios';
 
 const CATEGORIAS_DESCUENTO_ADICIONAL = {
     Alimentos: 0.02,
+    'Material de escritorio': 0.015,
 };
-
 
 class Ventas {
     getCantidad(cantidad) {
@@ -88,7 +88,7 @@ class Ventas {
     }
     calcularDescuentoCategoria(precioNeto, categoria) {
         const tasa = CATEGORIAS_DESCUENTO_ADICIONAL[categoria] || 0;
-        return Math.round(precioNeto * tasa);
+        return precioNeto * tasa;
     }
 }
 export default Ventas;
