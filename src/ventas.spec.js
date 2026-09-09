@@ -168,4 +168,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuentoEnvio(100, 'Antiguo Recurrente')).toEqual(1);
     });
+    it('deberia aplicar 1.5% de descuento en envio para cliente Especial', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularDescuentoEnvio(100, 'Especial')).toEqual(1.5);
+    });
 });
