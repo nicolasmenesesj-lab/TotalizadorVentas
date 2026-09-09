@@ -196,4 +196,29 @@ describe('Ventas', () => {
         // total = 60 - 0 + 3.75 + 70 = 133.75
         expect(resultado).toEqual(133.75);
     });
+    it('deberia mostrar el detalle completo del calculo', () => {
+        const ventas = new Ventas();
+        const detalle = ventas.obtenerDetalleCalculo({
+            cantidad: 20,
+            precio: 3,
+            estado: 'TX',
+            categoria: 'Varios',
+            tipoCliente: 'Normal',
+            pesoVolumetrico: 15,
+        });
+        expect(detalle).toEqual({
+            precioNeto: 60,
+            descuentoTramo: 0,
+            descuentoCategoria: 0,
+            descuentoFijo: 0,
+            descuentoTotal: 0,
+            impuestoEstado: 3.75,
+            impuestoCategoria: 0,
+            impuestoTotal: 3.75,
+            costoEnvio: 70,
+            descuentoEnvio: 0,
+            envioTotal: 70,
+            precioTotal: 133.75,
+        });
+    });
 });
