@@ -13,4 +13,8 @@ describe('Ventas', () => {
     const ventas = new Ventas();
     expect(ventas.calcularPrecioNeto(3, 5)).toEqual(15);
     });
+    it('deberia calcular el impuesto para el estado CA (8.25%)', () => {
+    const ventas = new Ventas();
+    expect(ventas.calcularImpuesto(100, 'CA')).toEqual(8.25);
+    });
 });
