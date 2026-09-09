@@ -1,5 +1,6 @@
 const TASAS_IMPUESTO_POR_ESTADO = {
     CA: 0.0825,
+    UT: 0.0665,
 };
 
 class Ventas {
@@ -16,5 +17,6 @@ class Ventas {
         const tasa = TASAS_IMPUESTO_POR_ESTADO[estado];
         return precioNeto * tasa;
     }
+    
 }
 export default Ventas;
