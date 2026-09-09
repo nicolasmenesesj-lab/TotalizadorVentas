@@ -81,4 +81,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularImpuestoCategoria(100, 'Muebles')).toEqual(3);
     });
+    it('deberia calcular 4% de impuesto adicional para la categoria Electronicos', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularImpuestoCategoria(100, 'Electronicos')).toEqual(4);
+    });
 });

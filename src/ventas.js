@@ -22,6 +22,7 @@ const CATEGORIAS_IMPUESTO_ADICIONAL = {
     'Bebidas alcoholicas': 0.07,
     'Material de escritorio': 0,
     Muebles: 0.03,
+    Electronicos: 0.04,
 };
 
 class Ventas {
