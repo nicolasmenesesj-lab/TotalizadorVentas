@@ -91,5 +91,8 @@ class Ventas {
         const tasa = CATEGORIAS_DESCUENTO_ADICIONAL[categoria] || 0;
         return precioNeto * tasa;
     }
+    calcularCostoEnvioPorUnidad(pesoVolumetrico) {
+        return 0;
+    }
 }
 export default Ventas;

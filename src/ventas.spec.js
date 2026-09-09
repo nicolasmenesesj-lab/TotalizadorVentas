@@ -116,4 +116,8 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.calcularDescuentoCategoria(100, 'Electronicos')).toEqual(1);
     });
+    it('deberia costar $0 el envio por unidad cuando el peso volumetrico es 5 (rango 0-10)', () => {
+        const ventas = new Ventas();
+        expect(ventas.calcularCostoEnvioPorUnidad(5)).toEqual(0);
+    });
 });
