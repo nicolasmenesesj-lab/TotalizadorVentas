@@ -1,19 +1,133 @@
 <!DOCTYPE html>
-<html xml:lang="es">
-  <head>
-    <title>Sumador</title>
-  </head>
-  <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
-    </form>
-    <div id="resultado-div"></div>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Totalizador</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #000;
+        padding: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px solid #000;
+        padding: 6px 10px;
+    }
+
+    .label {
+        white-space: nowrap;
+    }
+
+    input, select {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        border: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .celda-input {
+        min-width: 160px;
+    }
+
+    #totalizar-btn {
+        background: #d9d9d9;
+        border: 1px solid #000;
+        width: 100%;
+        padding: 6px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    #totalizar-btn:hover {
+        background: #c6c6c6;
+    }
+
+    #cancelar-btn {
+        background: #f2f2f2;
+        border: 1px solid #000;
+        width: 100%;
+        padding: 6px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    #resultado-tabla td {
+        border: none;
+        border-top: 1px solid #000;
+        padding: 4px 4px 4px 0;
+    }
+
+    #resultado-tabla tr:first-child td {
+        border-top: none;
+    }
+
+    .fila-total td {
+        font-weight: bold;
+        border-top: 2px solid #000 !important;
+    }
+
+    .error-texto {
+        color: #b00000;
+        font-weight: bold;
+        padding: 8px 0;
+    }
+</style>
+</head>
+<body>
+
+    <h3>Totalizador de Ventas</h3>
+
+    <table>
+        <tr>
+            <td class="label">Cantidad de item:</td>
+            <td class="celda-input"><input type="number" id="cantidad-item" value="20"></td>
+        </tr>
+        <tr>
+            <td class="label">Precio por item:</td>
+            <td class="celda-input"><input type="number" id="precio-item" value="3"></td>
+        </tr>
+        <tr>
+            <td class="label">Codigo de estado:</td>
+            <td class="celda-input"><select id="estado"></select></td>
+        </tr>
+        <tr>
+            <td class="label">Categoria de producto:</td>
+            <td class="celda-input"><select id="categoria"></select></td>
+        </tr>
+        <tr>
+            <td class="label">Tipo de cliente:</td>
+            <td class="celda-input"><select id="tipo-cliente"></select></td>
+        </tr>
+        <tr>
+            <td class="label">Peso volumetrico por unidad:</td>
+            <td class="celda-input"><input type="number" id="peso-volumetrico" value="15"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="totalizar-btn">Totalizar</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table id="resultado-tabla" style="border: 1px solid #000;">
+        <!-- se llena con presenter.js -->
+    </table>
+
+    <br>
+    <table style="width:160px;">
+        <tr><td id="cancelar-btn">Cancelar</td></tr>
+    </table>
 
     <script type="module" src="./src/presenter.js"></script>
-  </body>
+
+</body>
 </html>
