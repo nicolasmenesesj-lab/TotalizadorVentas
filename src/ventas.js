@@ -167,5 +167,11 @@ class Ventas {
     formatearPorcentaje(tasa) {
         return `${(tasa * 100).toFixed(2).replace(/\.?0+$/, '')}%`;
     }
+    validarCantidad(cantidad) {
+        if (cantidad <= 0) {
+            throw new Error('La cantidad debe ser mayor a cero');
+        }
+        return true;
+    }
 }
 export default Ventas;

@@ -225,4 +225,14 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(ventas.formatearPorcentaje(0.0625)).toEqual('6.25%');
     });
+    it('deberia lanzar un error si la cantidad es cero o negativa', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.validarCantidad(0)).toThrow('La cantidad debe ser mayor a cero');
+        expect(() => ventas.validarCantidad(-5)).toThrow('La cantidad debe ser mayor a cero');
+    });
+
+    it('no deberia lanzar error si la cantidad es valida', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.validarCantidad(20)).not.toThrow();
+    });
 });
