@@ -173,5 +173,11 @@ class Ventas {
         }
         return true;
     }
+    validarPrecio(precio) {
+        if (precio <= 0) {
+            throw new Error('El precio debe ser mayor a cero');
+        }
+        return true;
+    }
 }
 export default Ventas;

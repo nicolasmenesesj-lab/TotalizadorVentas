@@ -235,4 +235,15 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(() => ventas.validarCantidad(20)).not.toThrow();
     });
+
+    it('deberia lanzar un error si el precio es cero o negativo', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.validarPrecio(0)).toThrow('El precio debe ser mayor a cero');
+        expect(() => ventas.validarPrecio(-3)).toThrow('El precio debe ser mayor a cero');
+    });
+
+    it('no deberia lanzar error si el precio es valido', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.validarPrecio(5)).not.toThrow();
+    });
 });
