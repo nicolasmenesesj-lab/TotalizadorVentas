@@ -246,4 +246,14 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(() => ventas.validarPrecio(5)).not.toThrow();
     });
+    it('deberia lanzar un error si el estado no esta en la lista de estados disponibles', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.validarEstado('ZZ')).toThrow('Estado invalido o no seleccionado');
+        expect(() => ventas.validarEstado(undefined)).toThrow('Estado invalido o no seleccionado');
+    });
+
+    it('no deberia lanzar error si el estado es valido', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.validarEstado('CA')).not.toThrow();
+    });
 });

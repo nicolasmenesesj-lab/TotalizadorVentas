@@ -179,5 +179,11 @@ class Ventas {
         }
         return true;
     }
+    validarEstado(estado) {
+        if (!ESTADOS_DISPONIBLES.includes(estado)) {
+            throw new Error('Estado invalido o no seleccionado');
+        }
+        return true;
+    }
 }
 export default Ventas;
