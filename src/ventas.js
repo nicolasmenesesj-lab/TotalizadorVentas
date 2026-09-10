@@ -140,6 +140,27 @@ class Ventas {
     calcularPrecioTotalCompleto(datos) {
         return this.obtenerDetalleCalculo(datos).precioTotal;
     }
+/*
+    calcularPrecioTotalCompleto({ cantidad, precio, estado, categoria, tipoCliente, pesoVolumetrico }) {
+        const precioNeto = this.calcularPrecioNeto(cantidad, precio);
+
+        const descuentoTramo = this.calcularDescuento(precioNeto);
+        const descuentoCategoria = this.calcularDescuentoCategoria(precioNeto, categoria);
+        const descuentoFijo = this.calcularDescuentoFijo(tipoCliente, categoria, precioNeto);
+        const descuentoTotal = descuentoTramo + descuentoCategoria + descuentoFijo;
+
+        const impuestoEstado = this.calcularImpuesto(precioNeto, estado);
+        const impuestoCategoria = this.calcularImpuestoCategoria(precioNeto, categoria);
+        const impuestoTotal = impuestoEstado + impuestoCategoria;
+
+        const costoEnvio = this.calcularCostoEnvioTotal(cantidad, pesoVolumetrico);
+        const descuentoEnvio = this.calcularDescuentoEnvio(costoEnvio, tipoCliente);
+        const envioTotal = costoEnvio - descuentoEnvio;
+
+        return precioNeto - descuentoTotal + impuestoTotal + envioTotal;
+    }
+*/
+
     obtenerDetalleCalculo({ cantidad, precio, estado, categoria, tipoCliente, pesoVolumetrico }) {
         const precioNeto = this.calcularPrecioNeto(cantidad, precio);
 
