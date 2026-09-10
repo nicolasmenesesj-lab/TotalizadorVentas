@@ -256,4 +256,21 @@ describe('Ventas', () => {
         const ventas = new Ventas();
         expect(() => ventas.validarEstado('CA')).not.toThrow();
     });
+    it('deberia confirmar la compra y devolver el detalle si los datos son validos', () => {
+        const ventas = new Ventas();
+        const resultado = ventas.confirmarCompra({
+            cantidad: 20, precio: 3, estado: 'TX',
+            categoria: 'Varios', tipoCliente: 'Normal', pesoVolumetrico: 15,
+        });
+        expect(resultado.confirmada).toEqual(true);
+        expect(resultado.detalle.precioTotal).toEqual(133.75);
+    });
+
+    it('deberia lanzar un error al confirmar si los datos son invalidos', () => {
+        const ventas = new Ventas();
+        expect(() => ventas.confirmarCompra({
+            cantidad: -1, precio: 3, estado: 'TX',
+            categoria: 'Varios', tipoCliente: 'Normal', pesoVolumetrico: 15,
+        })).toThrow('La cantidad debe ser mayor a cero');
+    });
 });

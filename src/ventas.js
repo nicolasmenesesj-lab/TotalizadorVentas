@@ -185,5 +185,12 @@ class Ventas {
         }
         return true;
     }
+    confirmarCompra(datos) {
+        this.validarCantidad(datos.cantidad);
+        this.validarPrecio(datos.precio);
+        this.validarEstado(datos.estado);
+        const detalle = this.obtenerDetalleCalculo(datos);
+        return { confirmada: true, detalle };
+    }
 }
 export default Ventas;
