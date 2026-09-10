@@ -273,4 +273,11 @@ describe('Ventas', () => {
             categoria: 'Varios', tipoCliente: 'Normal', pesoVolumetrico: 15,
         })).toThrow('La cantidad debe ser mayor a cero');
     });
+    it('deberia cancelar la compra devolviendo un estado cancelado', () => {
+        const ventas = new Ventas();
+        expect(ventas.cancelarCompra()).toEqual({
+            confirmada: false,
+            mensaje: 'Compra cancelada',
+        });
+    });
 });

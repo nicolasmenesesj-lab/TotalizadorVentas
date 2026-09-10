@@ -192,5 +192,8 @@ class Ventas {
         const detalle = this.obtenerDetalleCalculo(datos);
         return { confirmada: true, detalle };
     }
+    cancelarCompra() {
+        return { confirmada: false, mensaje: 'Compra cancelada' };
+    }
 }
 export default Ventas;
